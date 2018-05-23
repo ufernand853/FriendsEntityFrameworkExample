@@ -34,8 +34,8 @@ namespace DataAccess
             using (FriendContext context = new FriendContext())
             {
                 Agenda agenda = context.Agendas.FirstOrDefault(a => a.Id == id);
-                agenda.Contacts.First();
-                string ownerName = agenda.Owner.Name;
+                context.Entry(agenda).Reference(a => a.Owner).Load();
+                context.Entry(agenda).Collection(a => a.Contacts).Load(); 
                 return agenda;
             }
         }
