@@ -73,6 +73,7 @@ namespace EFExample
             Console.ReadKey();
 
             aCopy.Name = "BLABLA";
+            aCopy.Owner.Name = "LadySir";
 
             repo = new AgendaRepository();
             repo.Modify(aCopy);

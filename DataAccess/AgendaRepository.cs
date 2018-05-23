@@ -53,6 +53,7 @@ namespace DataAccess
             using (FriendContext context = new FriendContext())
             {
                 context.Entry(entity).State = EntityState.Modified;
+                context.Entry(entity.Owner).State = EntityState.Modified;
                 context.SaveChanges();
             }
         }
