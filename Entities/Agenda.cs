@@ -10,6 +10,8 @@ namespace Entities
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
+
+        //VIRTUAL in this case means that the navigable poperty can be Lazy Loaded  
         public virtual User Owner { get; set; }
         public virtual ICollection<User> Contacts { get; set; }
     }
