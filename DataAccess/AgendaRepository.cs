@@ -33,7 +33,7 @@ namespace DataAccess
         {
             using (FriendContext context = new FriendContext())
             {
-                return context.Agendas.FirstOrDefault(a => a.Id == id);
+                return context.Agendas.Include(a => a.Owner).Include(a => a.Contacts).FirstOrDefault(a => a.Id == id);
             }
         }
 

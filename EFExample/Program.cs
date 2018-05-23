@@ -56,12 +56,14 @@ namespace EFExample
 
             Console.WriteLine(aCopy.Id);
             Console.WriteLine(aCopy.Name);
-            Console.WriteLine(aCopy.Owner);
+            Console.WriteLine(aCopy.Owner.Name);
 
             foreach (var u in aCopy.Contacts)
             {
                 Console.WriteLine(u.Name);
             }
+
+            Console.ReadKey();
         }
     }
 }
