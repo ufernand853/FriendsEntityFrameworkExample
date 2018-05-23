@@ -8,7 +8,7 @@ namespace Entities
 {
     public class Agenda
     {
-        public Guid Id;
+        public Guid Id { get; set; }
         public string Name { get; set; }
         public virtual User Owner { get; set; }
         public virtual ICollection<User> Contacts { get; set; }

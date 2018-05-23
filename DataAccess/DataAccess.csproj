@@ -51,6 +51,10 @@
   <ItemGroup>
     <Compile Include="AgendaRepository.cs" />
     <Compile Include="FriendContext.cs" />
+    <Compile Include="Migrations\201805232303278_Initial.cs" />
+    <Compile Include="Migrations\201805232303278_Initial.Designer.cs">
+      <DependentUpon>201805232303278_Initial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -67,6 +71,11 @@
       <Project>{63E7FC11-C787-4721-882E-8036FF2D18CF}</Project>
       <Name>Interfaces</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201805232303278_Initial.resx">
+      <DependentUpon>201805232303278_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
