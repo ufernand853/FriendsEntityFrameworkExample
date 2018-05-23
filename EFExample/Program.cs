@@ -45,12 +45,16 @@ namespace EFExample
             a.Contacts.Add(contact2);
             a.Owner = owner;
 
+
+            Console.WriteLine("Se va a agegar la agenda");
+            Console.ReadKey();
+
             IRepository<Agenda> repo = new AgendaRepository();
             repo.Add(a);
 
             Console.WriteLine("Agenda Agregada");
             Console.ReadKey();
-            Console.WriteLine("Se va a obtener la agenda");
+            Console.WriteLine("Se va a obtener la agenda\n\n");
             Console.ReadKey();
             Agenda aCopy = repo.Get(a.Id);
 
@@ -64,6 +68,33 @@ namespace EFExample
             }
 
             Console.ReadKey();
+
+            Console.WriteLine("\n\nSe va a modificar la agenda");
+            Console.ReadKey();
+
+            aCopy.Name = "BLABLA";
+
+            repo = new AgendaRepository();
+            repo.Modify(aCopy);
+
+            Console.WriteLine("Agenda Modificada");
+            Console.ReadKey();
+            Console.WriteLine("Se va a obtener la agenda\n\n");
+            Console.ReadKey();
+            Agenda aCopy2 = repo.Get(a.Id);
+
+            Console.WriteLine(aCopy2.Id);
+            Console.WriteLine(aCopy2.Name);
+            Console.WriteLine(aCopy2.Owner.Name);
+
+            foreach (var u in aCopy2.Contacts)
+            {
+                Console.WriteLine(u.Name);
+            }
+
+            Console.ReadKey();
+
+
         }
     }
 }
