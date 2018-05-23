@@ -8,6 +8,7 @@ namespace Entities
 {
     public class Agenda
     {
+        //Id convention name. If Class has a property that ends with "Id" it will become the PK
         public Guid Id { get; set; }
         public string Name { get; set; }
 
