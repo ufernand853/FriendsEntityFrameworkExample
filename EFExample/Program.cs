@@ -16,27 +16,23 @@ namespace EFExample
             Agenda a = new Agenda()
             {
                 Name = "Agenda 1",
-                Id = Guid.NewGuid(),
                 Contacts = new List<User>()
             };
 
             User owner = new User()
             {
-                Id = Guid.NewGuid(),
                 Age = 24,
                 Name = "Ramiro"
             };
 
             User contact1 = new User()
             {
-                Id = Guid.NewGuid(),
                 Age = 22,
                 Name = "Lady"
             };
 
             User contact2 = new User()
             {
-                Id = Guid.NewGuid(),
                 Age = 21,
                 Name = "Sir"
             };
@@ -74,6 +70,7 @@ namespace EFExample
 
             aCopy.Name = "BLABLA";
             aCopy.Owner.Name = "LadySir";
+            aCopy.Contacts.Add(new User() { Name = "Kid", Age = 20 });
 
             repo = new AgendaRepository();
             repo.Modify(aCopy);

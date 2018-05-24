@@ -3,7 +3,7 @@ namespace DataAccess.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Initial : DbMigration
+    public partial class InitialWithFluentApiGuidGen : DbMigration
     {
         public override void Up()
         {
@@ -11,7 +11,7 @@ namespace DataAccess.Migrations
                 "dbo.Agenda",
                 c => new
                     {
-                        Id = c.Guid(nullable: false),
+                        Id = c.Guid(nullable: false, identity: true),
                         Name = c.String(),
                         Owner_Id = c.Guid(),
                     })
@@ -23,7 +23,7 @@ namespace DataAccess.Migrations
                 "dbo.Users",
                 c => new
                     {
-                        Id = c.Guid(nullable: false),
+                        Id = c.Guid(nullable: false, identity: true),
                         Name = c.String(),
                         Age = c.Int(nullable: false),
                         Agenda_Id = c.Guid(),

@@ -54,6 +54,12 @@ namespace DataAccess
             {
                 context.Entry(entity).State = EntityState.Modified;
                 context.Entry(entity.Owner).State = EntityState.Modified;
+
+                foreach (var contact in entity.Contacts)
+                {
+                    context.Entry(contact).State = contact.Id.Equals(Guid.Empty) ? EntityState.Added : EntityState.Unchanged;
+                }
+
                 context.SaveChanges();
             }
         }
