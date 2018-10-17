@@ -72,7 +72,7 @@ namespace EFExample
             aCopy.Owner.Name = "LadySir";
             aCopy.Contacts.Add(new User() { Name = "Kid", Age = 20 });
 
-            dataAccess = new AgendadataAccesssitory();
+            dataAccess = new AgendaDataAccess();
             dataAccess.Modify(aCopy);
 
             Console.WriteLine("Agenda Modificada");
