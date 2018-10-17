@@ -45,14 +45,14 @@ namespace EFExample
             Console.WriteLine("Se va a agegar la agenda");
             Console.ReadKey();
 
-            IRepository<Agenda> repo = new AgendaRepository();
-            repo.Add(a);
+            IDataAccess<Agenda> dataAccess = new AgendaDataAccess();
+            dataAccess.Add(a);
 
             Console.WriteLine("Agenda Agregada");
             Console.ReadKey();
             Console.WriteLine("Se va a obtener la agenda\n\n");
             Console.ReadKey();
-            Agenda aCopy = repo.Get(a.Id);
+            Agenda aCopy = dataAccess.Get(a.Id);
 
             Console.WriteLine(aCopy.Id);
             Console.WriteLine(aCopy.Name);
@@ -72,14 +72,14 @@ namespace EFExample
             aCopy.Owner.Name = "LadySir";
             aCopy.Contacts.Add(new User() { Name = "Kid", Age = 20 });
 
-            repo = new AgendaRepository();
-            repo.Modify(aCopy);
+            dataAccess = new AgendadataAccesssitory();
+            dataAccess.Modify(aCopy);
 
             Console.WriteLine("Agenda Modificada");
             Console.ReadKey();
             Console.WriteLine("Se va a obtener la agenda\n\n");
             Console.ReadKey();
-            Agenda aCopy2 = repo.Get(a.Id);
+            Agenda aCopy2 = dataAccess.Get(a.Id);
 
             Console.WriteLine(aCopy2.Id);
             Console.WriteLine(aCopy2.Name);

@@ -10,7 +10,7 @@ using System.Linq;
 
 namespace DataAccess
 {
-    public class AgendaRepository : IRepository<Agenda>
+    public class AgendaDataAccess : IDataAccess<Agenda>
     {
         public void Add(Agenda entity)
         {
