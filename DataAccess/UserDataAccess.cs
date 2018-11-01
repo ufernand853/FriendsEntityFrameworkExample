@@ -62,5 +62,21 @@ namespace DataAccess
                 context.SaveChanges();
             }
         }
+
+        public void Empty()
+        {
+
+            using (FriendContext context = new FriendContext())
+            {
+                List<User> users = context.Users.ToList();
+                foreach (User actual in users)
+                {
+                    User toDelete = context.Users.Find(actual.Id);
+                    context.Users.Remove(toDelete);
+                }
+                context.SaveChanges();
+            }
+
+        }
     }
 }

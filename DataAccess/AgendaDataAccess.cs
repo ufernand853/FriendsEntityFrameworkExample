@@ -62,5 +62,21 @@ namespace DataAccess
                 context.SaveChanges();
             }
         }
+        public void Empty()
+        {
+
+            using (FriendContext context = new FriendContext())
+            {
+                List<Agenda> agendas = context.Agendas.ToList();
+                foreach (Agenda actual in agendas)
+                {
+                    Agenda toDelete = context.Agendas.Find(actual.Id);
+                    context.Agendas.Remove(toDelete);
+                }
+                context.SaveChanges();
+            }
+
+        }
     }
+
 }
