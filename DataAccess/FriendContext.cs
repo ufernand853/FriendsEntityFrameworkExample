@@ -25,6 +25,18 @@ namespace DataAccess
 
             modelBuilder.Entity<Agenda>().Property(x => x.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             modelBuilder.Entity<User>().Property(x => x.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+
+
+            modelBuilder.Entity<User>()
+               .HasMany<Agenda>(s => s.Agendas)
+               .WithMany(c => c.Contacts)
+               .Map(cs =>
+               {
+                   cs.MapLeftKey("User_Id");
+                   cs.MapRightKey("Agenda_Id");
+                   cs.ToTable("UserAgenda");
+               });
+
         }
     }
 }
