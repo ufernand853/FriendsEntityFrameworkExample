@@ -59,6 +59,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="SetUp.cs" />
     <Compile Include="TestManyToMany.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
