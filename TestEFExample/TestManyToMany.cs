@@ -2,6 +2,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Entities;
 using System.Collections.Generic;
+using Interfaces;
+using DataAccess;
 
 namespace TestEFExample
 {
@@ -9,10 +11,10 @@ namespace TestEFExample
     public class TestManyToMany
     {
         [TestMethod]
-        public void TestAddToAgendasOneUser()
+        public void TestAddTwoAgendasToOneUser()
         {
 
-            User owner = new User()
+            User user = new User()
             {
                 Age = 24,
                 Name = "Juan Owner",
@@ -33,20 +35,12 @@ namespace TestEFExample
             };
 
 
-            owner.Agendas.Add(agendaUno);
-            owner.Agendas.Add(agendaDos);
+            user.Agendas.Add(agendaUno);
+            user.Agendas.Add(agendaDos);
 
+            IDataAccess<User> dataAccessUser = new UserDataAccess();
+            dataAccessUser.Add(user);
 
-            User contact1 = new User()
-            {
-                Age = 22,
-                Name = "Lady Contact Added",
-                Agendas = new List<Agenda>()
-            };
-
-
-            agendaUno.Contacts.Add(contact1);
-            
         }
     }
 }

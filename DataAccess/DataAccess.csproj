@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UserDataAccess.cs" />
     <Compile Include="AgendaDataAccess.cs" />
     <Compile Include="FriendContext.cs" />
     <Compile Include="Migrations\201805240126458_InitialWithFluentApiGuidGen.cs" />
