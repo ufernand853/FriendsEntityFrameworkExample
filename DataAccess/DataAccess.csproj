@@ -55,6 +55,18 @@
     <Compile Include="Migrations\201805240126458_InitialWithFluentApiGuidGen.Designer.cs">
       <DependentUpon>201805240126458_InitialWithFluentApiGuidGen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201811011228422_Many to many User-Agendas.cs" />
+    <Compile Include="Migrations\201811011228422_Many to many User-Agendas.Designer.cs">
+      <DependentUpon>201811011228422_Many to many User-Agendas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811011237573_Many to many User-Agendas-FluentApi.cs" />
+    <Compile Include="Migrations\201811011237573_Many to many User-Agendas-FluentApi.Designer.cs">
+      <DependentUpon>201811011237573_Many to many User-Agendas-FluentApi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811011304135_Many to many Agenda Without unique Owner.cs" />
+    <Compile Include="Migrations\201811011304135_Many to many Agenda Without unique Owner.Designer.cs">
+      <DependentUpon>201811011304135_Many to many Agenda Without unique Owner.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -75,6 +87,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201805240126458_InitialWithFluentApiGuidGen.resx">
       <DependentUpon>201805240126458_InitialWithFluentApiGuidGen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811011228422_Many to many User-Agendas.resx">
+      <DependentUpon>201811011228422_Many to many User-Agendas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811011237573_Many to many User-Agendas-FluentApi.resx">
+      <DependentUpon>201811011237573_Many to many User-Agendas-FluentApi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811011304135_Many to many Agenda Without unique Owner.resx">
+      <DependentUpon>201811011304135_Many to many Agenda Without unique Owner.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

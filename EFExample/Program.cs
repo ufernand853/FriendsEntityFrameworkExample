@@ -39,7 +39,6 @@ namespace EFExample
 
             a.Contacts.Add(contact1);
             a.Contacts.Add(contact2);
-            a.Owner = owner;
 
 
             Console.WriteLine("Se va a agegar la agenda");
@@ -56,7 +55,6 @@ namespace EFExample
 
             Console.WriteLine(aCopy.Id);
             Console.WriteLine(aCopy.Name);
-            Console.WriteLine(aCopy.Owner.Name);
 
             foreach (var u in aCopy.Contacts)
             {
@@ -69,7 +67,6 @@ namespace EFExample
             Console.ReadKey();
 
             aCopy.Name = "BLABLA";
-            aCopy.Owner.Name = "LadySir";
             aCopy.Contacts.Add(new User() { Name = "Kid", Age = 20 });
 
             dataAccess = new AgendaDataAccess();
@@ -83,7 +80,6 @@ namespace EFExample
 
             Console.WriteLine(aCopy2.Id);
             Console.WriteLine(aCopy2.Name);
-            Console.WriteLine(aCopy2.Owner.Name);
 
             foreach (var u in aCopy2.Contacts)
             {
