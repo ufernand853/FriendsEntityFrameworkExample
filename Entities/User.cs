@@ -13,6 +13,8 @@ namespace Entities
         public string Name { get; set; }
         public int Age { get; set; }
 
+        public virtual ICollection<Agenda> Agendas { get; set; }
+
         //public Guid IdAgenda;
 
         //public Guid IdOwnedAgenda;
